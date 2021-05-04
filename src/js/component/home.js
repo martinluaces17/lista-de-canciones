@@ -152,17 +152,16 @@ export function Home() {
 
 	return (
 		<div>
-			<ul className="list-group">
-				<li className="list-group-item active" aria-current="true">
-					An active item
-				</li>
-				<li className="list-group-item">A second item</li>
-				<li className="list-group-item">A third item</li>
-				<li className="list-group-item">A fourth item</li>
-				<li className="list-group-item">And a fifth one</li>
-			</ul>
+			{songList.map((objeto, index) => {
+				return (
+					<div key={index} onClick={() => {}}>
+						<span>{objeto.id}</span>
+						<span>{objeto.name}</span>
+					</div>
+				);
+			})}
 			<div
-				className="btn-group"
+				className="btn-group text-center"
 				role="group"
 				aria-label="Button group with nested dropdown">
 				<button type="button" className="btn btn-secondary">
@@ -178,15 +177,6 @@ export function Home() {
 					<i className="fas fa-fast-forward"></i>
 				</button>
 				<div className="btn-group" role="group">
-					<button
-						id="btnGroupDrop1"
-						type="button"
-						className="btn btn-secondary dropdown-toggle"
-						data-toggle="dropdown"
-						aria-haspopup="true"
-						aria-expanded="false">
-						Lista de Canciones
-					</button>
 					<div
 						className="dropdown-menu"
 						aria-labelledby="btnGroupDrop1">
@@ -197,7 +187,6 @@ export function Home() {
 								controls
 							/>
 						</a>
-						<a>Cancion 2</a>
 					</div>
 				</div>
 			</div>
